@@ -8,7 +8,8 @@
 #' Pearson's r is computed using Fisher's transformation.
 #'
 #' Note: Cohen's dz is computed on paired sample data as the mean difference
-#' divided by the standard deviation of the difference.
+#' divided by the standard deviation of the difference. It also returns t and p
+#' values for each combination of effect size and sample size.
 #'
 #' Note: Cohen's ds is computed on two sample data as the mean difference
 #' divided by the pooled standard deviation of sample 1 and sample 2.
