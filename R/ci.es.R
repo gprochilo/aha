@@ -168,6 +168,7 @@ ci.es <- function(es,
   if(effect == "dz" | effect == "r"){res = eff(N)}
   if(effect == "ds"){res = eff(n1,n2)}
 
+
   conf.label = conf*100
   report = sprintf("%s-tailed test: %s = %.2f, %s%%CI [%.2f, %.2f], MoE = %.2f, t(%s) = %.2f, p = %.3f",
                    tails,
@@ -180,6 +181,19 @@ ci.es <- function(es,
                    res$df,
                    res$tval,
                    res$pval)
+  if(tails == 1){
+  report = sprintf("%s-tailed test: %s = %.2f, %s%%CI [%.2f, %.2f], MoE = NA, t(%s) = %.2f, p = %.3f",
+                   tails,
+                   effect,
+                   es,
+                   conf.label,
+                   res$ci[1],
+                   res$ci[2],
+                   res$df,
+                   res$tval,
+                   res$pval)
+
+  res$moe = "NA"}
 
   if(pr == TRUE){cat(report,"\n")}
   if(pr == TRUE){
