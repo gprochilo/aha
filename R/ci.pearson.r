@@ -9,7 +9,7 @@
 #' precision.
 #'
 #' For completeness, the function also computes the exact _t_ value and _p_
-#' value for a given combination of (_r_) and sample size (_N_). This is useful
+#' value for a given combination of _r_ and sample size (_N_). This is useful
 #' if the summary report has not included these values.
 #'
 #' _Note_: this function assumes the sample data are outlier free and have a

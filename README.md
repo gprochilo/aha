@@ -46,7 +46,7 @@ summary reports of data. If the *MoE* is greater than half the size of
 with low precision.
 
 For completeness, the function also computes the exact *t* value and *p*
-value for a given combination of (*r*) and sample size (*N*). This is
+value for a given combination of *r* and sample size (*N*). This is
 useful if the summary report has not included these values.
 
 *Note*: this function assumes the sample data are outlier free and have
