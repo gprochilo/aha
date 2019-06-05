@@ -9,12 +9,11 @@
 
 <!-- badges: end -->
 
-The aha package is a set of statistical analysis and teaching tools
-written by Guy A. Prochilo. These tools primarily serve a teaching
-purpose, and can be used to clarify introductory statistical concepts.
-The aha package is named after the interjection ‘aha\!’, which refers to
-the human experience of understanding a previously incomprehensible
-problem or concept.
+The aha package is a set of statistical analysis and teaching tools that
+can be used to clarify introductory statistical concepts. The aha
+package is named after the interjection ‘aha\!’, which refers to the
+human experience of understanding a previously incomprehensible problem
+or concept.
 
 The aha package currently only contains one function:
 `ci.pearson.r`.
@@ -41,11 +40,14 @@ devtools::install_github("gprochilo/aha")
 
 The `ci.pearson.r` function computes a confidence interval (CI) and
 confidence interval half-width (i.e., margin-of-error; hereby: *MoE*)
-for the population Pearson’s correlation coefficient based on summary
-reports of data. For completeness, it also computes the exact *t* value
-and *p* value for a given combination of correlation magnitude (*r*) and
-sample size (*N*). This is useful if the reporting publication has not
-included these values.
+for the population Pearson’s correlation coefficient (*r*) based on
+summary reports of data. If the *MoE* is greater than half the size of
+*r* the function will alert you that this *r* may have been estimated
+with low precision.
+
+For completeness, the function also computes the exact *t* value and *p*
+value for a given combination of (*r*) and sample size (*N*). This is
+useful if the summary report has not included these values.
 
 *Note*: this function assumes the sample data are outlier free and have
 a bivariate normal distribution. Ensure that these assumptions match

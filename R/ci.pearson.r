@@ -1,16 +1,20 @@
 #' @title Confidence interval, margin-of-error, t value, and p value for the
 #' population Pearson's correlation coefficient
 #'
-#' @description This function computes a confidence interval (CI) and confidence
-#' interval half-width (i.e., margin-of-error; hereby: MoE) for the population
-#' Pearson's correlation coefficient based on summary reports of data. For
-#' completeness, it also computes the exact t value and p value for a given
-#' combination of correlation magnitude (r) and sample size (N). This is useful
-#' if the reporting publication has not included these values.
+#' @description The `ci.pearson.r` function computes a confidence interval (CI)
+#' and confidence interval half-width (i.e., margin-of-error; hereby: _MoE_) for
+#' the population Pearson's correlation coefficient (_r_) based on summary
+#' reports of data. If the _MoE_ is greater than half the size of _r_ the
+#' function will alert you that this _r_ may have been estimated with low
+#' precision.
 #'
-#' Note that this function assumes the sample data are outlier free and have a
-#' bivariate normal distribution. Ensure that these assumptions match those
-#' of the reporting publication.
+#' For completeness, the function also computes the exact _t_ value and _p_
+#' value for a given combination of (_r_) and sample size (_N_). This is useful
+#' if the summary report has not included these values.
+#'
+#' _Note_: this function assumes the sample data are outlier free and have a
+#' bivariate normal distribution. Ensure that these assumptions match those of
+#' the reporting publication.
 #'
 #' @param r Sample Pearson's correlation coefficient value.
 #' @param n Total sample size.

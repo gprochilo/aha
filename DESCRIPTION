@@ -5,9 +5,8 @@ Version: 0.0.0.9000
 Authors@R: person("Guy", "Prochilo", email = "guy.prochilo@gmail.com",
                   role = c("aut", "cre"))
 Description: The aha package is a set of statistical analysis and teaching tools
-  written by Guy A. Prochilo. These tools primarily serve a teaching purpose, and 
-  can be used to clarify introductory statistical concepts. The aha package is 
-  named after the interjection 'aha!', which refers to the human experience of 
+  that can be used to clarify introductory statistical concepts. The aha package 
+  is named after the interjection 'aha!', which refers to the human experience of 
   understanding a previously incomprehensible problem or concept.
 License: GPL-3
 Encoding: UTF-8
