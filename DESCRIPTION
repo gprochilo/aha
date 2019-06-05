@@ -2,6 +2,7 @@ Package: aha
 Type: Package
 Title: Tools for Statistical Analyis and Teaching
 Version: 0.0.0.9000
+Date: 2019-05-06
 Authors@R: person("Guy", "Prochilo", email = "guy.prochilo@gmail.com",
                   role = c("aut", "cre"))
 Description: The aha package is a set of statistical analysis and teaching tools
@@ -12,8 +13,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    MBESS (>= 4.4.3),
-    psych (>= 1.8.12)
+    MBESS (>= 4.4.3)
 RoxygenNote: 6.1.1
 URL: https://github.com/gprochilo/aha
 BugReports: https://github.com/gprochilo/aha/issues

@@ -6,14 +6,20 @@
 \alias{aha-package}
 \title{aha: Tools for Statistical Analyis and Teaching}
 \description{
-The aha package is a set of statistical analysis and teaching tools 
-    written by Guy A. Prochilo. Many of these tools have been written to 
-    implement a parameter estimation approach to planning research and analyzing
-    data, and which have featured in the authors’ empirical work. These tools 
-    also serve a teaching purpose, and can be used to clarify introductory 
-    statistical concepts. The aha package is named after the interjection 
-    'aha!', which refers to the human experience of understanding a previously 
-    incomprehensible problem or concept.
+\if{html}{\figure{logo.png}{options: align='right'}}
+
+The aha package is a set of statistical analysis and teaching tools
+  that can be used to clarify introductory statistical concepts. The aha package 
+  is named after the interjection 'aha!', which refers to the human experience of 
+  understanding a previously incomprehensible problem or concept.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/gprochilo/aha}
+  \item Report bugs at \url{https://github.com/gprochilo/aha/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Guy Prochilo \email{guy.prochilo@gmail.com}
