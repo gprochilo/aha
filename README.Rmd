@@ -40,11 +40,11 @@ devtools::install_github("gprochilo/aha")
 
 The `ci.pearson.r` function computes a confidence interval (CI) and confidence interval half-width (i.e., margin-of-error; hereby: _MoE_) for the population Pearson's correlation coefficient based on summary reports of data. For completeness, it also computes the exact _t_ value and _p_ value for a given combination of correlation magnitude (_r_) and sample size (_N_). This is useful if the reporting publication has not included these values.
 
-Note that this function assumes the sample data are outlier free and have a bivariate normal distribution. Ensure that these assumptions match those of the reporting publication.
+_Note_: this function assumes the sample data are outlier free and have a bivariate normal distribution. Ensure that these assumptions match those of the reporting publication.
 
 ```{r eval=TRUE}
 library(aha)
-# ci.pearson.r(r = 0.49, n = 17, alternative = "two.sided")
+ci.pearson.r(r = 0.49, n = 17, alternative = "two.sided")
 ```
 
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->

@@ -44,6 +44,31 @@ ci.pearson.r <- function(r,
                          alternative = "two.sided",
                          silent = FALSE){
 
+  if(missing(r) || !is.numeric(r)){
+    stop("Please provide a numeric value for 'r'",
+         call. = FALSE)
+  }
+
+  if(r >= 1 || r <= -1){
+    stop("'r' must be a single number between -1 and 1",
+         call. = FALSE)
+  }
+
+  if(alternative != "two.sided" && alternative != "greater" && alternative != "less"){
+    stop("'alternative' may be specified as one of: 'two.sided', 'greater', or 'less'",
+         call. = FALSE)
+  }
+
+  if(!is.logical(silent)){
+    stop("'silent' can be TRUE (T) or FALSE (F)'",
+         call. = FALSE)
+  }
+
+  if(n < 4){
+    stop("'n' must be greater than 3",
+         call. = FALSE)
+  }
+
   # Define a function to suppress the print output of CRAN package functions
   # that do not allow you to turn off the output
 
