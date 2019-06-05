@@ -141,13 +141,22 @@ ci.pearson.r <- function(r,
                "greater" = "alternative hypothesis: true correlation is greater than 0",
                "less" = "alternative hypothesis: true correlation is less than 0")
 
+  # Define a temporary variable for moe so it can be printed as a character
+  # This is done because moe can either be a character or numeric value
+
+  temp.moe = switch(alternative,
+                    "two.sided" = round(moe,2),
+                    "greater" = moe,
+                    "less" = moe)
+
   # Define a clean output of the results
 
-  res = sprintf("r(%.0f) = %.2f, 95%% CI [%.2f, %.2f], t = %.2f, p = %.3f",
+  res = sprintf("r(%.0f) = %.2f, 95%% CI [%.2f, %.2f], MoE = %s, t = %.2f, p = %.3f",
                 df,
                 r,
                 es.ci.LL,
                 es.ci.UL,
+                temp.moe,
                 tval,
                 pval)
 
@@ -174,4 +183,3 @@ ci.pearson.r <- function(r,
               tval = tval,
               pval = pval))
 }
-
