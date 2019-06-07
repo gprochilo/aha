@@ -15,8 +15,8 @@ package is named after the interjection ‘aha\!’, which refers to the
 human experience of understanding a previously incomprehensible problem
 or concept.
 
-The aha package currently only contains one function:
-`ci.pearson.r`.
+The aha package currently contains two functions: `ci.pearson.r` and
+`test.pearson.r`.
 
 ## Installation
 
@@ -47,18 +47,25 @@ with low precision.
 
 For completeness, the function also computes the exact *t* value and *p*
 value for a given combination of *r* and sample size (*N*). This is
-useful if the summary report has not included these values.
+useful if the summary report has not included these values. This
+function also supports non-zero null values. If a non-zero null value is
+selected, the resulting test is a *z* test.
 
 *Note*: this function assumes the sample data are outlier free and have
 a bivariate normal distribution. Ensure that these assumptions match
 those of the reporting publication.
+
+*Note also*: be aware that minor differences between the summary data
+and the function output may occur dur to the loss of precision when
+using summary data. This is because you are using *r* values that have
+been rounded.
 
 ``` r
 library(aha)
 #> aha!
 ci.pearson.r(r = 0.49, n = 17, alternative = "two.sided")
 #> alternative hypothesis: true correlation is not equal to 0 
-#> r(15) = 0.49, 95% CI [0.01, 0.79], t = 2.18, p = 0.046 
+#> r(15) = 0.49, 95% CI [0.01, 0.79], MoE = 0.39, t = 2.18, p = 0.046 
 #> Note: This r may have been estimated with low precision
 #> $r
 #> [1] 0.49

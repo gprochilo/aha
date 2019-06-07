@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 The aha package is a set of statistical analysis and teaching tools that can be used to clarify introductory statistical concepts. The aha package is named after the interjection 'aha!', which refers to the human experience of understanding a previously incomprehensible problem or concept.
 
-The aha package currently only contains one function: `ci.pearson.r`.
+The aha package currently contains two functions: `ci.pearson.r` and `test.pearson.r`.
 
 ## Installation
 
@@ -40,9 +40,11 @@ devtools::install_github("gprochilo/aha")
 
 The `ci.pearson.r` function computes a confidence interval (CI) and confidence interval half-width (i.e., margin-of-error; hereby: _MoE_) for the population Pearson's correlation coefficient (_r_) based on summary reports of data. If the _MoE_ is greater than half the size of _r_ the function will alert you that this _r_ may have been estimated with low precision. 
 
-For completeness, the function also computes the exact _t_ value and _p_ value for a given combination of _r_ and sample size (_N_). This is useful if the summary report has not included these values.
+For completeness, the function also computes the exact _t_ value and _p_ value for a given combination of _r_ and sample size (_N_). This is useful if the summary report has not included these values. This function also supports non-zero null values. If a non-zero null value is selected, the resulting test is a _z_ test.
 
 _Note_: this function assumes the sample data are outlier free and have a bivariate normal distribution. Ensure that these assumptions match those of the reporting publication.
+
+_Note also_: be aware that minor differences between the summary data and the function output may occur dur to the loss of precision when using summary data. This is because you are using _r_ values that have been rounded.
 
 ```{r eval=TRUE}
 library(aha)

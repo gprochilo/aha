@@ -13,8 +13,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    MBESS (>= 4.4.3),
-    psych (>= 1.8.12)
+    MBESS (>= 4.4.3)
 RoxygenNote: 6.1.1
 URL: https://github.com/gprochilo/aha
 BugReports: https://github.com/gprochilo/aha/issues
