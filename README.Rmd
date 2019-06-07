@@ -46,9 +46,18 @@ _Note_: this function assumes the sample data are outlier free and have a bivari
 
 _Note also_: be aware that minor differences between the summary data and the function output may occur dur to the loss of precision when using summary data. This is because you are using _r_ values that have been rounded.
 
+#### Alternative hypothesis: the true correlation is not equal to 0
+
 ```{r eval=TRUE}
 library(aha)
 ci.pearson.r(r = 0.49, n = 17, alternative = "two.sided")
+```
+
+#### Alternative hypothesis: the true correlation is not equal to 0.3
+
+```{r eval=TRUE}
+library(aha)
+ci.pearson.r(r = 0.49, n = 17, null = 0.3, alternative = "two.sided")
 ```
 
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->

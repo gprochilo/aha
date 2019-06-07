@@ -60,33 +60,67 @@ and the function output may occur dur to the loss of precision when
 using summary data. This is because you are using *r* values that have
 been rounded.
 
+#### Alternative hypothesis: the true correlation is not equal to 0
+
 ``` r
 library(aha)
 #> aha!
 ci.pearson.r(r = 0.49, n = 17, alternative = "two.sided")
 #> alternative hypothesis: true correlation is not equal to 0 
-#> r(15) = 0.49, 95% CI [0.01, 0.79], MoE = 0.39, t = 2.18, p = 0.046 
-#> Note: This r may have been estimated with low precision
+#> r = 0.49, 95% CI [0.01, 0.79], MoE = 0.39, t(15) = 2.18, p = 0.046 
+#> note: statistic is a t value 
+#> note: r may have low precision
 #> $r
 #> [1] 0.49
 #> 
 #> $n
 #> [1] 17
 #> 
+#> $null
+#> [1] 0
+#> 
+#> $statistic
+#> [1] 2.177025
+#> 
+#> $pval
+#> [1] 0.04585992
+#> 
 #> $ci
 #> [1] 0.01223732 0.78561898
 #> 
 #> $moe
 #> [1] 0.3866908
+```
+
+#### Alternative hypothesis: the true correlation is not equal to 0.3
+
+``` r
+library(aha)
+ci.pearson.r(r = 0.49, n = 17, null = 0.3, alternative = "two.sided")
+#> alternative hypothesis: true correlation is not equal to 0.3 
+#> r = 0.49, 95% CI [0.01, 0.79], MoE = 0.39, z = 0.85, p = 0.397 
+#> note: statistic is a z value 
+#> note: r may have low precision
+#> $r
+#> [1] 0.49
 #> 
-#> $df
-#> [1] 15
+#> $n
+#> [1] 17
 #> 
-#> $tval
-#> [1] 2.177025
+#> $null
+#> [1] 0.3
+#> 
+#> $statistic
+#> [1] 0.8476378
 #> 
 #> $pval
-#> [1] 0.04585992
+#> [1] 0.3966397
+#> 
+#> $ci
+#> [1] 0.01223732 0.78561898
+#> 
+#> $moe
+#> [1] 0.3866908
 ```
 
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
