@@ -5,13 +5,11 @@
 \title{Test for Correlation Between Bivariate Samples Using Pearson Correlation
 Analysis.}
 \usage{
-test.pearson.r(x, y, dataset, null = 0, alternative = "two.sided",
+test.pearson.r(x, y, null = 0, alternative = "two.sided",
   conf.level = 0.95, silent = FALSE)
 }
 \arguments{
-\item{x, y}{numeric vectors of data values. x and y must have the same length.}
-
-\item{dataset}{dataframe that stores x and y vectors}
+\item{x, y}{name of vector containing x and y variables.}
 
 \item{null}{The null hypothesis value for the Pearson correlation test.
 Defaults to 0 if not specified.}
@@ -36,7 +34,7 @@ Note: this function assumes the sample data are outlier free and have a
 bivariate normal distribution.
 }
 \examples{
-test.pearson.r(x = X, y = Y, dataset = df, null = 0.2)
+test.pearson.r(x = X, y = Y, null = 0.2)
 }
 \keyword{Pearson's}
 \keyword{coefficient,}

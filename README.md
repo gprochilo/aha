@@ -15,8 +15,9 @@ package is named after the interjection ‘aha\!’, which refers to the
 human experience of understanding a previously incomprehensible problem
 or concept.
 
-The aha package currently contains two functions: `ci.pearson.r` and
-`test.pearson.r`.
+The aha package currently contains three functions: `ci.pearson.r`,
+`test.pearson.r`, and
+`gen.r`.
 
 ## Installation
 

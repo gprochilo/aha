@@ -1,5 +1,5 @@
 #' @title Confidence interval, margin-of-error, t value, and p value for the
-#' population Pearson's correlation coefficient
+#' population Pearson's correlation coefficient based on summary data.
 #'
 #' @description The ci.pearson.r function computes a confidence interval (CI)
 #' and confidence interval half-width (i.e., margin-of-error; hereby: moe) for
@@ -9,19 +9,22 @@
 #'
 #' For completeness, the function also computes the exact t value and p
 #' value for a given combination of r and sample size (N). This is useful
-#' if the summary report has not included these values. The user may
-#' also specify the value of null and compute these statistics based on the
-#' alternate hypothesis that the true correlation is not equal to the null value
-#' (defaults to zero if not specified). If a nonzero null is used, a z test is
-#' performed and z statistic is reported instead of t.
+#' if the summary report has not included these values. The user may also
+#' specify a smallest effect size of interest as the null value, if desired,
+#' and compute these statistics based on the alternate hypothesis that the true
+#' correlation is not equal to the null value (this defaults to a null of 0 if
+#' no specified). If a nonzero null is used, a z test is performed and a z
+#' statistic is reported instead of t.
 #'
-#' Note: this function assumes the sample data are outlier free and have a
-#' bivariate normal distribution. Ensure that these assumptions match those of
-#' the reporting publication.
+#' Important note: this function assumes the sample data are outlier free and
+#' have a bivariate normal distribution. Ensure that these assumptions match
+#' those of the reporting publication.
 #'
-#' Note also: be aware that minor differences between the summary data and the
-#' function output may occur dur to loss of precision when using summary data.
-#' This is because you are using r values that have been rounded.
+#' Important note: also be aware that there will be some loss of precision when
+#' using summary data as input. For example, if you input r values that have been
+#' rounded to two decimal places, the computed confidence limit, t, and p values
+#' may be slightly different from the true values. This difference, however, will
+#' be relatively minor.
 #'
 #' @param r Sample Pearson's correlation coefficient value.
 #' @param n Total sample size.
@@ -117,16 +120,6 @@ ci.pearson.r <- function(r,
          call. = FALSE)
   }
 
-  # Define a function to suppress the printed output of CRAN package functions
-  # that do not allow you to turn off print output
-
-  quiet <- function(x){
-
-    sink(tempfile())
-    on.exit(sink())
-    invisible(force(x))
-  }
-
   # Define the Type I error rate for the lower and upper confidence limits
 
   alpha.lower = switch(alternative,
@@ -143,11 +136,11 @@ ci.pearson.r <- function(r,
   # Compute the confidence limits based on the test performed
   # The quiet function will suppress the output of ci.cc
 
-  es.ci = quiet(MBESS::ci.cc(r = r,
-                             n = n,
-                             alpha.lower = alpha.lower,
-                             alpha.upper = alpha.upper,
-                             conf.level = NULL))
+  es.ci = MBESS::ci.cc(r = r,
+                       n = n,
+                       alpha.lower = alpha.lower,
+                       alpha.upper = alpha.upper,
+                       conf.level = NULL)
 
   # The confidence limits are stored in vector position 1 and 3
 
@@ -251,6 +244,7 @@ ci.pearson.r <- function(r,
     if(is.numeric(moe) && moe > r/2){
       cat("note: r may have low precision\n\n", sep=" ")
     } else {cat("\n")}
+
     }
 
   # Return the following values

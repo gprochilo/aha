@@ -11,8 +11,7 @@
 #' Note: this function assumes the sample data are outlier free and have a
 #' bivariate normal distribution.
 #'
-#' @param x,y numeric vectors of data values. x and y must have the same length.
-#' @param dataset dataframe that stores x and y vectors
+#' @param x,y name of vector containing x and y variables.
 #' @param null The null hypothesis value for the Pearson correlation test.
 #' Defaults to 0 if not specified.
 #' @param alternative Character string specifying the alternative hypothesis,
@@ -26,35 +25,20 @@
 #'
 #' @export
 #' @examples
-#' test.pearson.r(x = X, y = Y, dataset = df, null = 0.2)
+#' test.pearson.r(x = X, y = Y, null = 0.2)
 
 
 test.pearson.r <- function(x,
                            y,
-                           dataset,
                            null = 0,
                            alternative = "two.sided",
                            conf.level = 0.95,
                            silent = FALSE){
 
-  if(missing(x) || missing(y) || missing(dataset)){
+  if(missing(x) || missing(y)){
     stop("Please input x and y variable names and dataset where they are stored",
          call. = FALSE)
   }
-
-  # Capture input without evaluation
-
-  args <- as.list(match.call())
-
-  # Evaluate x
-
-  x = eval(args$x, dataset)
-  if(is.character(x)){x = get(x, dataset)}
-
-  # Evaluate y
-
-  y = eval(args$y, dataset)
-  if(is.character(y)){y = get(y, dataset)}
 
   # Stop warning
 
