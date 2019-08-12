@@ -60,6 +60,10 @@ library(aha)
 ci.pearson.r(r = 0.49, n = 17, null = 0.3, alternative = "two.sided")
 ```
 
+# Warning
+
+This package is under development. Backwards compatibility is __not guaranteed__, and both functions and syntax may be __subject to change__ (or completely removed) in future updates. Exercise extreme caution if you choose to use this package within an analysis pipeline. 
+
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
 
 <!-- ```{r cars} -->

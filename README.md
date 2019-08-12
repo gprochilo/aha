@@ -124,6 +124,14 @@ ci.pearson.r(r = 0.49, n = 17, null = 0.3, alternative = "two.sided")
 #> [1] 0.3866908
 ```
 
+# Warning
+
+This package is under development. Backwards compatibility is **not
+guaranteed**, and both functions and syntax may be **subject to change**
+(or completely removed) in future updates. Exercise extreme caution if
+you choose to use this package within an analysis
+pipeline.
+
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
 
 <!-- ```{r cars} -->
