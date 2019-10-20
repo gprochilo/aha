@@ -1,5 +1,5 @@
 # On attachment print the following message
 
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("aha!")
+  packageStartupMessage("Warning: This package is under development")
 }
