@@ -63,8 +63,29 @@ will be relatively minor.
 ### Alternative hypothesis: the true correlation is not equal to 0
 
 ``` r
-# library(aha)
-# aha::r_ci(r = 0.49, n = 17, conf_level = 0.95)
+library(aha)
+#> Warning: This package is under development
+aha::r_ci(r = 0.49, n = 17, conf_level = 0.95)
+#> alternative hypothesis: true correlation is not equal to 0
+#> r = .49, 95% CI [0.01, 0.79], MoE = 0.39, t(15) = 2.18, p = .046
+#> Note: r may have low precision
+#> $r
+#> [1] 0.49
+#> 
+#> $ci
+#> [1] 0.01223732 0.78561898
+#> 
+#> $n
+#> [1] 17
+#> 
+#> $t_value
+#> [1] 2.177025
+#> 
+#> $p_value
+#> [1] 0.04585992
+#> 
+#> $moe
+#> [1] 0.3866908
 ```
 
 # Warning
