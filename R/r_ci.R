@@ -75,11 +75,6 @@ r_ci <- function(r,
          call. = FALSE)
   }
 
-  if(!is.logical(silent)){
-    stop("'silent' can be TRUE (T) or FALSE (F)'",
-         call. = FALSE)
-  }
-
   if(missing(n) || !is.numeric(n)  || length(n) > 1 || n < 4){
     stop("Please provide a single numeric value for 'n' that is greater than 3",
          call. = FALSE)
