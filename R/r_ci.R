@@ -26,6 +26,7 @@
 #' @param alternative Character string specifying the alternative hypothesis,
 #' must be one of "two_sided" (default), "greater" or "less".
 #' @param conf_level Confidence level of the interval.
+#' @param silent A logical indicating whether to suppress message output: FALSE (default) or TRUE.
 #'
 #' @keywords Pearson's r, correlation coefficient, confidence intervals
 #'
@@ -46,7 +47,8 @@
 r_ci <- function(r,
                  n,
                  alternative = "two_sided",
-                 conf_level = 0.95){
+                 conf_level = 0.95,
+                 silent = FALSE){
 
   # Define the following stop functions
 
@@ -145,12 +147,16 @@ r_ci <- function(r,
                 t_value,
                 ifelse(p_value < .001, "<.001", substring(format(round(p_value, 3), nsmall = 3), 2)))
 
-  # Return the hypothesis used and user-friendly result as messages
+  # Return the hypothesis used and user-friendly result as messages if silent = FALSE
+
+  if(silent == FALSE){
+
   message(hyp)
   message(res)
 
   if(is.numeric(moe) & moe > r / 2){
     message("Note: r may have low precision \n")} else{message()}
+  }
 
   # Return the following values
   return(list(r = r,

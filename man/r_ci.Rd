@@ -5,7 +5,8 @@
 \title{Confidence interval, margin-of-error, *t* value, and *p* value for the
 population Pearson's correlation coefficient (*r*) based on summary data.}
 \usage{
-r_ci(r, n, alternative = "two_sided", conf_level = 0.95)
+r_ci(r, n, alternative = "two_sided", conf_level = 0.95,
+  silent = FALSE)
 }
 \arguments{
 \item{r}{Sample Pearson's correlation coefficient value.}
@@ -16,6 +17,8 @@ r_ci(r, n, alternative = "two_sided", conf_level = 0.95)
 must be one of "two_sided" (default), "greater" or "less".}
 
 \item{conf_level}{Confidence level of the interval.}
+
+\item{silent}{A logical indicating whether to suppress message output: FALSE (default) or TRUE.}
 }
 \description{
 The r_ci function computes a confidence interval (CI) and

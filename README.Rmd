@@ -38,15 +38,15 @@ You can install the development version of aha from [GitHub](https://github.com/
 # install.packages("devtools")
 devtools::install_github("gprochilo/aha")
 ```
-## Example
+## Summary
 
 The `r_ci` function computes a confidence interval (CI) and confidence interval half-width (i.e., margin-of-error; hereby: _MoE_) for the population Pearson's correlation coefficient (_r_) based on summary reports of data. If the _MoE_ is greater than half the size of _r_ the function will alert you that this _r_ may have been estimated with low precision. 
 
-For completeness, the function also computes the exact _t_ value and _p_ value for a given combination of _r_ and sample size (_N_). This is useful if the summary report has not included these values. This function also supports non-zero null values. If a non-zero null value is selected, the resulting test is a _z_ test.
+For completeness, the function also computes the exact _t_ value and _p_ value for a given combination of _r_ and sample size (_N_). This is useful if the summary report has not included these values.
 
 *Important note*: this function assumes the sample data are outlier free and have a bivariate normal distribution. Ensure that these assumptions match those of the reporting publication. There will also be a small loss of precision when using summary data to compute confidence intervals and test statistics. For example, if you input an *r* value that has been rounded to two decimal places, the *t* and *p* values may be slightly different from the true values. These differences, however, will be relatively minor.
 
-### Alternative hypothesis: the true correlation is not equal to 0
+### Example use
 
 ```{r eval=TRUE}
 library(aha)

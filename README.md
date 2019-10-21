@@ -36,7 +36,7 @@ You can install the development version of aha from
 devtools::install_github("gprochilo/aha")
 ```
 
-## Example
+## Summary
 
 The `r_ci` function computes a confidence interval (CI) and confidence
 interval half-width (i.e., margin-of-error; hereby: *MoE*) for the
@@ -47,9 +47,7 @@ precision.
 
 For completeness, the function also computes the exact *t* value and *p*
 value for a given combination of *r* and sample size (*N*). This is
-useful if the summary report has not included these values. This
-function also supports non-zero null values. If a non-zero null value is
-selected, the resulting test is a *z* test.
+useful if the summary report has not included these values.
 
 *Important note*: this function assumes the sample data are outlier free
 and have a bivariate normal distribution. Ensure that these assumptions
@@ -60,7 +58,7 @@ that has been rounded to two decimal places, the *t* and *p* values may
 be slightly different from the true values. These differences, however,
 will be relatively minor.
 
-### Alternative hypothesis: the true correlation is not equal to 0
+### Example use
 
 ``` r
 library(aha)
