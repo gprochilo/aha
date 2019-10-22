@@ -6,7 +6,7 @@
 population Pearson's correlation coefficient (*r*) based on summary data.}
 \usage{
 r_ci(r, n, alternative = "two_sided", conf_level = 0.95,
-  silent = FALSE)
+  null_value = 0, silent = FALSE, print_plot = TRUE)
 }
 \arguments{
 \item{r}{Sample Pearson's correlation coefficient value.}
@@ -18,7 +18,12 @@ must be one of "two_sided" (default), "greater" or "less".}
 
 \item{conf_level}{Confidence level of the interval.}
 
+\item{null_value}{The null hypothesis value used to evaluate the sample Pearson's
+correlation coefficient (default is 0).}
+
 \item{silent}{A logical indicating whether to suppress message output: FALSE (default) or TRUE.}
+
+\item{print_plot}{A logical indicating whether to print plot of results: FALSE (default) or TRUE.}
 }
 \description{
 The r_ci function computes a confidence interval (CI) and
