@@ -34,6 +34,7 @@
 #' @keywords Pearson's r, correlation coefficient, confidence intervals
 #'
 #' @export
+#' @import ggplot2
 #' @examples
 #' # Compute statistics for a Pearson correlation of 0.32 in a sample of 26 bivariate
 #' # observations (two-sided test)

@@ -62,7 +62,7 @@ will be relatively minor.
 
 ``` r
 # library(aha)
-# r_ci(r = 0.49, n = 17, conf_level = 0.95)
+# aha::r_ci(r = 0.49, n = 17, conf_level = 0.95)
 ```
 
 # Warning
