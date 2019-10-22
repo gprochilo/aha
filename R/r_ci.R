@@ -243,27 +243,27 @@ r_ci <- function(r,
 
   # Plot the data
 
-    ggplot2::ggplot(data = ps, aes(x = null, y = p)) +
+    ggplot2::ggplot(data = ps, ggplot2::aes(x = null, y = p)) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
     ggplot2::geom_vline(xintercept = c(result$ci[1], result$ci[2]), linetype = "dashed", color = "blue") +
     ggplot2::geom_vline(xintercept = null_value, size = 1) +
     ggplot2::geom_hline(yintercept = 1 - conf_level, color = "red", linetype = "dashed") +
     ggplot2::geom_ribbon(data = subset(ps, null >= result$ci & null <= result$ci[2]),
-                                              aes(ymin = 0, ymax = 1),
+                         ggplot2::aes(ymin = 0, ymax = 1),
                          alpha = 0.05, fill = "blue") +
     ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
     ggplot2::scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
-    coord_cartesian(ylim = c(0, 1), expand = FALSE, clip = "off") +
+    ggplot2::coord_cartesian(ylim = c(0, 1), expand = FALSE, clip = "off") +
     ggplot2::labs(x = "Null Hypothesis Value", y = expression(paste(italic("p"), " value")),
                   caption = paste(" - The black solid line represents the null value for the summary data hypothesis test",  "\n",
                                   "- The blue dashed lines represent the", conf_level * 100, "% CI: r = ", result$r, "[", round(result$ci[1], 2), ",", round(result$ci[2], 2), "]", "\n",
                                   "- The red dashed line represents the criterion for significance:", (1-conf_level), "\n",
                                   "- The", conf_level * 100, "% CI is comprised of all null values that yield p >", 1 - conf_level, "\n",
                                   "- All values in the shaded region are compatible with r = ", result$r)) +
-    theme_light(base_size = 15) +
-    theme(plot.caption = element_text(hjust = 0)) +
-    ggtitle(expression(paste(italic("P"), " Value Function"))) -> r_plot
+    ggplot2::theme_light(base_size = 15) +
+    ggplot2::theme(plot.caption = element_text(hjust = 0)) +
+    ggplot2::ggtitle(expression(paste(italic("P"), " Value Function"))) -> r_plot
 
 
 
