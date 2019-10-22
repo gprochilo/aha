@@ -49,8 +49,8 @@ For completeness, the function also computes the exact _t_ value and _p_ value f
 ### Example use
 
 ```{r eval=TRUE}
-# library(aha)
-# aha::r_ci(r = 0.49, n = 17, conf_level = 0.95)
+library(aha)
+r_ci(r = 0.49, n = 17, conf_level = 0.95, print_plot = T)
 ```
 
 # Warning

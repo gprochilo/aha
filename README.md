@@ -61,9 +61,36 @@ will be relatively minor.
 ### Example use
 
 ``` r
-# library(aha)
-# aha::r_ci(r = 0.49, n = 17, conf_level = 0.95)
+library(aha)
+#> Warning: This package is under development
+r_ci(r = 0.49, n = 17, conf_level = 0.95, print_plot = T)
+#> Warning in null >= result$ci: longer object length is not a multiple of
+#> shorter object length
+#> r = .49, 95% CI [0.01, 0.79], MoE = 0.39, t(15) = 2.18, p = .046
+#> hypothesis:        true correlation is not equal to 0
+#> test statistic:    t value
+#> note:              r may have low precision
 ```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+    #> $r
+    #> [1] 0.49
+    #> 
+    #> $ci
+    #> [1] 0.01223732 0.78561898
+    #> 
+    #> $n
+    #> [1] 17
+    #> 
+    #> $statistic
+    #> [1] 2.177025
+    #> 
+    #> $p_value
+    #> [1] 0.04585992
+    #> 
+    #> $moe
+    #> [1] 0.3866908
 
 # Warning
 

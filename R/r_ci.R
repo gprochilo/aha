@@ -35,6 +35,7 @@
 #'
 #' @export
 #' @import ggplot2
+#' @import dplyr
 #' @examples
 #' # Compute statistics for a Pearson correlation of 0.32 in a sample of 26 bivariate
 #' # observations (two-sided test)
@@ -54,7 +55,7 @@ r_ci <- function(r,
                  conf_level = 0.95,
                  null_value = 0,
                  silent = FALSE,
-                 print_plot = TRUE){
+                 print_plot = FALSE){
 
   # Define the following stop functions
 
@@ -244,13 +245,14 @@ r_ci <- function(r,
 
   # Plot the data
 
-    ggplot(data = ps, aes(x = null, y = p)) +
+    ps %>%
+    ggplot(aes(x = null, y = p)) +
     geom_point() +
     geom_line() +
     geom_vline(xintercept = c(result$ci[1], result$ci[2]), linetype = "dashed", color = "blue") +
     geom_vline(xintercept = null_value, size = 1) +
     geom_hline(yintercept = 1 - conf_level, color = "red", linetype = "dashed") +
-    geom_ribbon(data = subset(ps, null >= result$ci & null <= result$ci[2]),
+    geom_ribbon(data = ps %>% dplyr::filter(null > result$ci[1] & null < result$ci[2]),
                          aes(ymin = 0, ymax = 1),
                          alpha = 0.05, fill = "blue") +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +

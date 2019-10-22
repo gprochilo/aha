@@ -6,7 +6,7 @@
 population Pearson's correlation coefficient (*r*) based on summary data.}
 \usage{
 r_ci(r, n, alternative = "two_sided", conf_level = 0.95,
-  null_value = 0, silent = FALSE, print_plot = TRUE)
+  null_value = 0, silent = FALSE, print_plot = FALSE)
 }
 \arguments{
 \item{r}{Sample Pearson's correlation coefficient value.}
