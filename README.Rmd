@@ -50,7 +50,14 @@ For completeness, the function also computes the exact _t_ value and _p_ value f
 
 ```{r eval=TRUE}
 library(aha)
-r_ci(r = 0.49, n = 17, conf_level = 0.95, print_plot = T)
+r_ci(r = 0.49, n = 17, conf_level = 0.95)
+```
+
+### Print *P* Value Function plot
+
+```{r eval=TRUE, fig.width=7, fig.height=7, out.width="80%", fig.align = 'center', fig.show = 'hold', dpi=800}
+library(aha)
+r_ci(r = 0.49, n = 17, conf_level = 0.95, print_plot = TRUE)
 ```
 
 # Warning
