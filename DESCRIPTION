@@ -17,7 +17,6 @@ Imports:
     MASS (>= 7.3-51),
     ggplot2 (>= 3.1.0), 
     scales (>= 1.0.0), 
-    dplyr (>= 0.8.3),
     purrr (>= 0.3.2)
 RoxygenNote: 6.1.1
 URL: https://github.com/gprochilo/aha

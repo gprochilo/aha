@@ -242,14 +242,14 @@ r_ci <- function(r,
                                          print_plot = FALSE)$p_value)) -> ps
 
   # Plot the data
-  ps %>%
-    ggplot2::ggplot(aes(x = null, y = p)) +
+
+    ggplot2::ggplot(data = ps, aes(x = null, y = p)) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
     ggplot2::geom_vline(xintercept = c(result$ci[1], result$ci[2]), linetype = "dashed", color = "blue") +
     ggplot2::geom_vline(xintercept = null_value, size = 1) +
     ggplot2::geom_hline(yintercept = 1 - conf_level, color = "red", linetype = "dashed") +
-    ggplot2::geom_ribbon(data = ps %>% filter(null >= result$ci[1] & null <= result$ci[2]),
+    ggplot2::geom_ribbon(data = subset(ps, null >= result$ci & null <= result$ci[2]),
                                               aes(ymin = 0, ymax = 1),
                          alpha = 0.05, fill = "blue") +
     ggplot2::scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
